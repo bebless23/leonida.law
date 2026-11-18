@@ -148,6 +148,16 @@
     .logo-sub{letter-spacing:.3em}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+  /* Office photos: drop assets/offices/<slug>.jpg in; a gradient shows until then */
+  .office .pic{display:block;height:150px;margin:-28px -26px 20px;border-radius:20px 20px 0 0;background-size:cover;background-position:center}
+  .office::before{z-index:1}
+  .pic.vice{background-image:url("assets/offices/vice-city.jpg"),linear-gradient(135deg,#ff7a9c,#7b3fa0)}
+  .pic.keys{background-image:url("assets/offices/keys.jpg"),linear-gradient(135deg,#7fe3e0,#1b8fb0)}
+  .pic.grass{background-image:url("assets/offices/grassrivers.jpg"),linear-gradient(135deg,#b7d98b,#3f7d5c)}
+  .pic.port{background-image:url("assets/offices/port-gellhorn.jpg"),linear-gradient(135deg,#ffb36b,#8a3b2a)}
+  .pic.amb{background-image:url("assets/offices/ambrosia.jpg"),linear-gradient(135deg,#5b6b8c,#1d2639)}
+  .pic.kal{background-image:url("assets/offices/mount-kalaga.jpg"),linear-gradient(135deg,#d9b48a,#5d7b3e)}
 </style>
 </head>
 <body>
@@ -196,32 +206,38 @@
       <p class="lede">Six locations across Leonida, each staffed by someone who has absolutely seen this before.</p>
       <div class="grid-3">
         <article class="office hq">
+          <span class="pic vice" role="img" aria-label="Vice City scene"></span>
           <span class="kind">Flagship office</span>
           <h3>Vice City</h3>
           <p>Neon, Lincolns and alibis. Home of Vice City Attorney.</p>
           <a href="https://vicecity.law">Visit vicecity.law →</a>
         </article>
         <article class="office">
+          <span class="pic keys" role="img" aria-label="Leonida Keys scene"></span>
           <span class="kind">Coastal division</span>
           <h3>Leonida Keys</h3>
           <p>Boat-related incidents. We don't ask what was in the cooler.</p>
         </article>
         <article class="office">
+          <span class="pic grass" role="img" aria-label="Grassrivers scene"></span>
           <span class="kind">Wetlands division</span>
           <h3>Grassrivers</h3>
           <p>Airboat disputes and gator-adjacent misunderstandings.</p>
         </article>
         <article class="office">
+          <span class="pic port" role="img" aria-label="Port Gellhorn scene"></span>
           <span class="kind">Maritime division</span>
           <h3>Port Gellhorn</h3>
           <p>Cargo that "fell off the boat." Shipping, receiving, deniability.</p>
         </article>
         <article class="office">
+          <span class="pic amb" role="img" aria-label="Ambrosia scene"></span>
           <span class="kind">Small-town division</span>
           <h3>Ambrosia</h3>
           <p>Quiet town, loud problems. Everybody already knows, so let's get ahead of it.</p>
         </article>
         <article class="office">
+          <span class="pic kal" role="img" aria-label="Mount Kalaga scene"></span>
           <span class="kind">Backcountry division</span>
           <h3>Mount Kalaga</h3>
           <p>Off the grid? So is your case file.</p>
