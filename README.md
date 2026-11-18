@@ -5,7 +5,7 @@ Static one-page site for **Leonida Law**, the statewide in-game (roleplay) law f
 Two tracks on one page: the fictional firm for game roleplay (offices + in-game booking form) and the real attorney section linking to panalawfirm.com. Keep both footer notices; keep jokes out of the real section.
 
 ## Hero art
-Save the image as `assets/hero.jpg`, then add `has-art` to the hero: `<section class="hero has-art" ...>`.
+Hero and office photos are GTA VI images (© Rockstar Games), used with permission per the owner; keep the credit line in the footer.
 
 ## Contact form
 Create a free form at https://formspree.io, then replace `YOUR_FORM_ID` in `index.html`.
