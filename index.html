@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Law</title>
+<meta name="description" content="Leonida Law: the statewide in-game law firm for Leonida roleplay, created by Miami attorney Lubomir Panayotov, Esq. of Pana Law Firm, P.A.">
+<meta property="og:title" content="Leonida Law">
+<meta property="og:description" content="Six offices. One Lincoln. Zero comments to the press.">
+<meta property="og:url" content="https://leonida.law/">
+<meta name="theme-color" content="#0f6f86">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f6f86'/%3E%3Ccircle cx='32' cy='30' r='14' fill='%23ffc857'/%3E%3Crect x='10' y='40' width='44' height='4' rx='2' fill='%23fff8ec'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#fff8ec; --sand-2:#f6ead6; --ink:#12313a; --muted:#4f6b72;
+    --sea:#0f6f86; --sea-2:#0b5466; --aqua:#3cc6c9; --sun:#ffc857; --coral:#ff6f59; --line:rgba(18,49,58,.14);
+    --serif:"DM Serif Display", Georgia, serif; --sans:"Montserrat", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--sand);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+  /* Nav */
+  header.nav{position:absolute;inset:0 0 auto 0;z-index:5}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .mark{font-family:var(--serif);font-size:24px;text-decoration:none;color:#fff;letter-spacing:.01em}
+  .mark span{color:var(--sun)}
+  .nav-links{display:flex;align-items:center;gap:22px}
+  .nav-link{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.9)}
+  .nav-link:hover{color:#fff;text-decoration:underline}
+  .nav-cta{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:11px 18px;border-radius:999px;background:#fff;color:var(--sea-2)}
+  .nav-cta:hover{background:var(--sun);color:var(--ink)}
+
+  /* Hero: CSS daytime scene; the ChatGPT art drops in via .has-art */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;color:#fff;
+    background:
+      radial-gradient(circle at 78% 30%, #fff6c9 0 70px, rgba(255,200,87,.85) 72px, rgba(255,200,87,0) 210px),
+      linear-gradient(180deg,#1b8fb0 0%,#4ec0d6 42%,#9fe3e0 58%,#2aa7b5 60%,#0f6f86 100%)}
+  .hero.has-art{background:url("assets/hero.jpg") 60% center / cover no-repeat, #0f6f86}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(8,46,58,.55) 0%,rgba(8,46,58,.25) 40%,rgba(8,46,58,0) 62%)}
+  .hero.has-art::before{background:linear-gradient(90deg,rgba(8,46,58,.72) 0%,rgba(8,46,58,.4) 38%,rgba(8,46,58,0) 65%)}
+  .hero .palm{position:absolute;bottom:-10px;width:420px;max-width:45vw;opacity:.9;pointer-events:none}
+  .hero .palm.r{right:-40px}
+  .hero.has-art .palm{display:none}
+  .hero .wrap{position:relative;z-index:2;width:100%}
+  .hero-copy{max-width:600px;padding:120px 0 90px}
+  .badge{display:inline-flex;align-items:center;gap:10px;margin:0 0 24px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);font-size:12px;font-weight:600;letter-spacing:.06em;backdrop-filter:blur(6px)}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--sun);flex:0 0 8px}
+  .logo{font-family:var(--serif);font-weight:400;line-height:.92;margin:0;font-size:clamp(64px,11vw,128px);letter-spacing:-.01em;text-shadow:0 4px 30px rgba(8,46,58,.45)}
+  .logo em{color:var(--sun);font-style:italic}
+  .logo-sub{display:block;margin-top:16px;font-family:var(--sans);font-weight:600;font-size:clamp(13px,1.8vw,17px);letter-spacing:.45em;text-transform:uppercase}
+  .tagline{margin:26px 0 36px;font-size:19px;max-width:480px;text-shadow:0 2px 14px rgba(8,46,58,.5)}
+  .ctas{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink);background:var(--sun);border:0;border-radius:999px;padding:17px 28px;cursor:pointer;text-decoration:none;box-shadow:0 10px 30px -10px rgba(255,140,40,.8);transition:transform .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.75);box-shadow:none;backdrop-filter:blur(6px)}
+  .btn-sea{background:var(--sea);color:#fff;box-shadow:0 10px 30px -12px rgba(15,111,134,.9)}
+  .btn-outline{background:transparent;color:var(--sea-2);border:1.5px solid var(--sea);box-shadow:none}
+  .btn:focus-visible,.nav-cta:focus-visible,.nav-link:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+
+  /* Stats strip */
+  .strip{background:var(--sea-2);color:#fff}
+  .strip .wrap{display:flex;justify-content:space-around;flex-wrap:wrap;gap:18px;padding-top:26px;padding-bottom:26px;text-align:center}
+  .strip b{display:block;font-family:var(--serif);font-weight:400;font-size:38px;line-height:1;color:var(--sun)}
+  .strip span{font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+
+  section{scroll-margin-top:20px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--coral);margin:0 0 14px}
+  .rp-tag{display:inline-block;font-size:10px;letter-spacing:.2em;color:#fff;background:var(--coral);border-radius:6px;padding:3px 8px;margin-right:10px;vertical-align:middle}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,56px);line-height:1.05;margin:0 0 18px}
+  h2 em{color:var(--sea)}
+  .lede{color:var(--muted);font-size:17px;margin:0 0 28px;max-width:640px}
+
+  /* Offices */
+  .offices{padding:100px 0}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+  .office{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 26px 26px;box-shadow:0 14px 34px -24px rgba(18,49,58,.45)}
+  .office::before{content:"";position:absolute;left:26px;top:0;width:44px;height:4px;border-radius:0 0 4px 4px;background:var(--aqua)}
+  .office.hq{background:linear-gradient(160deg,#16243c,#3a1d4a);color:#fff;border-color:transparent}
+  .office.hq::before{background:var(--coral)}
+  .office h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:4px 0 4px}
+  .office .kind{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sea)}
+  .office.hq .kind{color:var(--sun)}
+  .office p{margin:10px 0 0;color:var(--muted)}
+  .office.hq p{color:#d9cfe6}
+  .office a{display:inline-block;margin-top:14px;font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--sun);text-decoration:none}
+  .office a:hover{text-decoration:underline}
+
+  /* Booking */
+  .book{padding:100px 0;background:var(--sand-2)}
+  .book .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+  .points{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  .points li{display:flex;gap:12px;align-items:baseline}
+  .points li::before{content:"☀";color:var(--coral);flex:0 0 auto}
+  form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:36px;box-shadow:0 20px 50px -30px rgba(18,49,58,.5)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+  label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  input,select,textarea{font:inherit;color:var(--ink);background:var(--sand);border:1px solid var(--line);border-radius:12px;padding:13px 15px;width:100%}
+  textarea{min-height:130px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sea);box-shadow:0 0 0 3px rgba(15,111,134,.18)}
+  .check{display:flex;gap:12px;align-items:flex-start;font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted);margin:4px 0 24px}
+  .check input{width:18px;height:18px;margin-top:2px;flex:0 0 18px;accent-color:var(--sea)}
+  .hp{position:absolute;left:-9999px}
+  .status{margin:16px 0 0;font-size:14px;min-height:1.4em}
+  .status.ok{color:var(--sea)} .status.err{color:#c0392b}
+
+  /* Real attorney */
+  .real{padding:100px 0;background:#fff;border-top:1px solid var(--line)}
+  .real .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+  .real .eyebrow{color:var(--sea)}
+  .practice{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+  .practice li{padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .card{border:1px solid var(--line);border-radius:22px;padding:34px;background:var(--sand)}
+  .card h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 4px}
+  .card .role{color:var(--muted);margin:0 0 22px;font-size:14px}
+  .card dl{margin:0 0 26px;display:grid;gap:14px}
+  .card dt{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .card dd{margin:4px 0 0}
+  .card .btns{display:flex;flex-direction:column;gap:12px}
+
+  footer{background:var(--ink);color:#c9d6d9;padding:48px 0 56px;font-size:13px}
+  footer .top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+  footer .notice{margin:0 0 12px;max-width:920px;border-left:2px solid rgba(255,255,255,.2);padding-left:16px}
+  footer strong{color:#fff}
+  footer a{color:#fff}
+
+  @media (max-width:900px){
+    .grid-3{grid-template-columns:1fr 1fr}
+    .book .grid,.real .grid{grid-template-columns:1fr;gap:40px}
+    .hero::before{background:linear-gradient(180deg,rgba(8,46,58,.7) 0%,rgba(8,46,58,.35) 60%,rgba(8,46,58,.15) 100%)}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 16px}
+    .grid-3,.practice,.row{grid-template-columns:1fr}
+    .row{gap:0}
+    form,.card{padding:24px 18px}
+    .nav-link{display:none}
+    .ctas .btn{width:100%}
+    .strip b{font-size:30px}
+    .logo-sub{letter-spacing:.3em}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top">Leonida<span>.</span>law</a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="nav-link" href="#offices">Offices</a>
+      <a class="nav-link" href="#real">Real legal help</a>
+      <a class="nav-cta" href="#book">Book counsel</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Leonida Law">
+    <svg class="palm" viewBox="0 0 200 260" aria-hidden="true"><g fill="#0b4a5a"><path d="M98 260c4-60 6-120 2-178l8-1c6 60 4 120-2 179z"/><path d="M104 84C80 50 40 44 6 58c34-6 64 4 86 30zM104 84c10-36 40-58 80-56-34 10-56 30-70 60zM104 84C70 74 36 92 20 122c22-22 50-34 80-32zM104 84c34-12 70 2 90 30-26-16-56-22-86-16zM104 84C100 50 76 22 44 10c26 20 42 46 50 76z"/></g></svg>
+    <svg class="palm r" viewBox="0 0 200 260" aria-hidden="true" style="transform:scaleX(-1)"><g fill="#0b4a5a"><path d="M98 260c4-60 6-120 2-178l8-1c6 60 4 120-2 179z"/><path d="M104 84C80 50 40 44 6 58c34-6 64 4 86 30zM104 84c10-36 40-58 80-56-34 10-56 30-70 60zM104 84C70 74 36 92 20 122c22-22 50-34 80-32zM104 84c34-12 70 2 90 30-26-16-56-22-86-16zM104 84C100 50 76 22 44 10c26 20 42 46 50 76z"/></g></svg>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="badge"><span class="dot" aria-hidden="true"></span>Statewide counsel. Open from opening day.</p>
+        <h1 class="logo">Leonida <em>Law</em><span class="logo-sub">Statewide in-game counsel</span></h1>
+        <p class="tagline">From the Keys to the swamp, the Sunshine State's worst decisions deserve its best defense.</p>
+        <div class="ctas">
+          <a class="btn" href="#book">Book counsel <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#real">Real legal help in Miami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-label="Firm at a glance">
+    <div class="wrap">
+      <div><b>6</b><span>Offices</span></div>
+      <div><b>1</b><span>Lincoln</span></div>
+      <div><b>0</b><span>Comments to the press</span></div>
+      <div><b>24/7</b><span>Including hurricanes</span></div>
+    </div>
+  </div>
+
+  <section class="offices" id="offices">
+    <div class="wrap">
+      <p class="eyebrow"><span class="rp-tag">Roleplay</span>Our offices</p>
+      <h2>Wherever it happened, <em>we're nearby.</em></h2>
+      <p class="lede">Six locations across Leonida, each staffed by someone who has absolutely seen this before.</p>
+      <div class="grid-3">
+        <article class="office hq">
+          <span class="kind">Flagship office</span>
+          <h3>Vice City</h3>
+          <p>Neon, Lincolns and alibis. Home of Vice City Attorney.</p>
+          <a href="https://vicecity.law">Visit vicecity.law →</a>
+        </article>
+        <article class="office">
+          <span class="kind">Coastal division</span>
+          <h3>Leonida Keys</h3>
+          <p>Boat-related incidents. We don't ask what was in the cooler.</p>
+        </article>
+        <article class="office">
+          <span class="kind">Wetlands division</span>
+          <h3>Grassrivers</h3>
+          <p>Airboat disputes and gator-adjacent misunderstandings.</p>
+        </article>
+        <article class="office">
+          <span class="kind">Maritime division</span>
+          <h3>Port Gellhorn</h3>
+          <p>Cargo that "fell off the boat." Shipping, receiving, deniability.</p>
+        </article>
+        <article class="office">
+          <span class="kind">Small-town division</span>
+          <h3>Ambrosia</h3>
+          <p>Quiet town, loud problems. Everybody already knows, so let's get ahead of it.</p>
+        </article>
+        <article class="office">
+          <span class="kind">Backcountry division</span>
+          <h3>Mount Kalaga</h3>
+          <p>Off the grid? So is your case file.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="wrap grid">
+      <div>
+        <p class="eyebrow"><span class="rp-tag">Roleplay</span>In-game booking</p>
+        <h2>Pick an office. <em>Tell us everything.</em></h2>
+        <p class="lede">Running a roleplay server or got your character in trouble anywhere in Leonida? Book the firm for your arrest, trial or courtroom scene.</p>
+        <ul class="points">
+          <li>Statewide conspiracy? Ask about group rates.</li>
+          <li>Florida-sized problems, Leonida-sized solutions.</li>
+          <li>We answer during hurricanes. Mostly.</li>
+        </ul>
+      </div>
+
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID (see README.md). -->
+      <form id="book-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Leonida Law: in-game booking">
+        <div class="row">
+          <div class="field">
+            <label for="character">Character name</label>
+            <input id="character" name="character" required>
+          </div>
+          <div class="field">
+            <label for="server">Server</label>
+            <input id="server" name="server" placeholder="Server name">
+          </div>
+        </div>
+        <div class="field">
+          <label for="contact">Email or Discord</label>
+          <input id="contact" name="contact" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="office">Office</label>
+          <select id="office" name="office" required>
+            <option value="" selected disabled>Choose one</option>
+            <option>Vice City</option>
+            <option>Leonida Keys</option>
+            <option>Grassrivers</option>
+            <option>Port Gellhorn</option>
+            <option>Ambrosia</option>
+            <option>Mount Kalaga</option>
+            <option>No idea where I am</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">What happened in-game?</label>
+          <textarea id="message" name="message" required placeholder="Start with the boat. It's always the boat."></textarea>
+        </div>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check">
+          <input type="checkbox" name="acknowledged" value="yes" required>
+          I understand Leonida Law is a fictional roleplay firm for video game servers, not real legal services. For a real legal matter I'll contact Pana Law Firm.
+        </label>
+        <button class="btn btn-sea" type="submit">Book counsel <span aria-hidden="true">→</span></button>
+        <p class="status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="real" id="real">
+    <div class="wrap grid">
+      <div>
+        <p class="eyebrow">Real legal help</p>
+        <h2>The real attorney <em>behind the firm.</em></h2>
+        <p class="lede">Leonida Law and Vice City Attorney are roleplay creations of Lubomir Panayotov, Esq., founder of Pana Law Firm, P.A. and a member of The Florida Bar, based in Miami. Real legal matters are handled only through Pana Law Firm, never through the in-game form above.</p>
+        <ul class="practice">
+          <li>Tax law</li>
+          <li>Crypto &amp; blockchain</li>
+          <li>Meme coin projects &amp; disputes</li>
+          <li>Trusts &amp; estates</li>
+          <li>Entity formation</li>
+          <li>Frozen assets &amp; recovery</li>
+        </ul>
+      </div>
+      <aside class="card" aria-label="Pana Law Firm contact">
+        <h3>Lubomir Panayotov, Esq.</h3>
+        <p class="role">Pana Law Firm, P.A. · Licensed in Florida</p>
+        <dl>
+          <div><dt>Office</dt><dd>One Biscayne Tower<br>2 S. Biscayne Blvd, Suite 2730<br>Miami, FL 33131</dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+13054650281">305-465-0281</a></dd></div>
+        </dl>
+        <div class="btns">
+          <a class="btn btn-sea" href="https://panalawfirm.com/schedule" rel="noopener">Schedule a consultation <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline" href="https://panalawfirm.com" rel="noopener">Visit panalawfirm.com</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <a class="mark" href="#top">Leonida<span>.</span>law</a>
+      <span>© <span id="yr">2026</span> Pana Law Firm, P.A. · Sister site: <a href="https://vicecity.law">vicecity.law</a></span>
+    </div>
+    <p class="notice"><strong>Roleplay firm.</strong> Leonida Law, Vice City Attorney and everything in the "Roleplay" sections of this site are fictional and for video game roleplay only. They are not legal services, not legal advice, and do not create an attorney-client relationship. Not affiliated with, endorsed by, or sponsored by any game studio or publisher. All trademarks belong to their respective owners.</p>
+    <p class="notice"><strong>Attorney information.</strong> Lubomir Panayotov, Esq., Pana Law Firm, P.A., One Biscayne Tower, 2 S. Biscayne Blvd, Suite 2730, Miami, FL 33131. Licensed in Florida. This website is for general information only and is not legal advice. Contacting the firm does not create an attorney-client relationship; please do not send confidential information until representation is agreed in writing. The hiring of a lawyer is an important decision that should not be based solely upon advertisements.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const form = document.getElementById('book-form');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.className = 'status';
+    if (!form.checkValidity()) {
+      status.textContent = "Fill in your character name, contact, office and what happened, and tick the box.";
+      status.classList.add('err');
+      form.reportValidity();
+      return;
+    }
+    if (form.action.includes('YOUR_FORM_ID')) {
+      status.textContent = "Our phones are down for hurricane season. Check back soon.";
+      status.classList.add('err');
+      return;
+    }
+    status.textContent = "Sending…";
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error(res.status);
+      form.reset();
+      status.textContent = "Received. Stay off social media until we call you.";
+      status.classList.add('ok');
+    } catch {
+      status.textContent = "That didn't go through. Try again in a minute.";
+      status.classList.add('err');
+    }
+  });
+</script>
+</body>
+</html>
